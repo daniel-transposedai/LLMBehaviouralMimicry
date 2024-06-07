@@ -72,6 +72,7 @@ def main():
                     "Emmy Award–winning science educator Bill Nye teaches you his methods for solving everyday problems, evaluating information, and thinking like a scientist",
                     "Acclaimed author Michael Pollan teaches you what he's spent decades researching: how to eat more ethically, healthfully, and sustainably"
                     ])
+            st.session_state['current_speaker'] = genre
 
             # Every form must have a submit button.
             submitted = st.form_submit_button("Start/Reset my chat!", on_click=reset_conversation)
