@@ -52,7 +52,7 @@ def main():
 
     # App Sidebar
     with st.sidebar:
-        st.header("About")
+        st.header(":red[About]", divider='rainbow')
         st.markdown(
             """
             This application PoC interfaces with Masterclass's instructional content using
