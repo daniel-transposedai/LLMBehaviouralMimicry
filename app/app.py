@@ -55,9 +55,10 @@ def main():
         st.header("About")
         st.markdown(
             """
-            This chatbot interfaces with a
+            This application PoC interfaces with Masterclass's instructional content using
             [LangChain](https://python.langchain.com/docs/get_started/introduction)
-            agent designed to help you learn alongside your favourite celebrities!
+            agent designed to help you learn from your favourite celebrities! Created 
+            for Masterclass by Daniel Campbell.
             """
         )
 
@@ -66,11 +67,11 @@ def main():
         with st.form(key="my_form"):
             genre = st.radio(
                 "Who do you want to talk to!",
-                ["***Kevin Hart***", "***Bill Nye***", "***Michael Pollan***"],
+                ["***Bill Nye***","***Kevin Hart***", "***Michael Pollan***"],
                 captions=[
-                    "Engage with Comedy icon Kevin Hart as he teaches you how to use humor as a tool for success. If you can find laughter everywhere, you can be confident anywhere",
                     "Emmy Award–winning science educator Bill Nye teaches you his methods for solving everyday problems, evaluating information, and thinking like a scientist",
-                    "Acclaimed author Michael Pollan teaches you what he's spent decades researching: how to eat more ethically, healthfully, and sustainably"
+                    "Engage with Comedy icon Kevin Hart as he teaches you how to use humor as a tool for success. If you can find laughter everywhere, you can be confident anywhere",
+                    "Acclaimed author Michael Pollan teaches you what he's spent decades researching: how to eat more ethically, healthfully, and sustainably",
                     ])
             st.session_state['current_speaker'] = genre
             st.session_state['styleguide_selection'] = format_vectorcontext(genre)
@@ -93,7 +94,7 @@ def main():
     # For persistent variables : Session State
     if "chat_history" not in st.session_state:
         st.session_state.chat_history = [
-            AIMessage(content="Select who you want to speak to on the left panel first!")
+            AIMessage(content="Select who you want to speak to on the left panel, or start speaking to Bill Nye below!")
             ]
 
     # Persistent Vector Store
