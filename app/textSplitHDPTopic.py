@@ -141,7 +141,7 @@ def upsertToVectorDB(embeddings, speaker_name):
 if __name__ == '__main__':
     # TESTING
     # Preprocess the text
-    file_path = 'michaelpollan_transcript.txt'
+    file_path = '../michaelpollan_transcript.txt'
     speaker_name= 'michaelpollan'
     texts, original_sentences = preprocessText(file_path)
 
