@@ -35,8 +35,8 @@ def gen_style_template(name, transcript_path="placeholder", use_existing=True):
         - Identify distinctive rhetorical strategies employed by the speaker and list them under "rhetorical_techniques".
         - Note how the speaker engages with the audience and describe this under "engagement_style".
         - Capture the predominant emotional undertone of the speaker’s public messages in "emotional_tone".
-        - List 15-20 central themes or topics frequently addressed by the speaker in the transcript under "thematic_content", also leveraging public knowledge about the speaker themselves to add a larger overview.
-        - Provide 15-20 direct, exact, word for word quotes from the transcripts that illustrate the speaking style and unique character of the speaker, especially cases that defy average speaking behaviour, adding them to "examples_from_transcripts".
+        - List at least 15 to 20 central themes or topics frequently addressed by the speaker in the transcript under "thematic_content", also leveraging public knowledge about the speaker themselves to add a larger overview.
+        - Provide at least 15 to 20 direct, exact, word for word quotes from the transcripts that illustrate the speaking style and unique character of the speaker, especially cases that defy average speaking behaviour, adding them to "examples_from_transcripts".
         - Understand and define the speaker’s core personal values and insights reflected in their transcript and public information under "personal_values".
         - Determine and list communication elements that are not characteristic of the speaker by reviewing the transcripts and noting any out-of-character phrases, themes, or styles that are not typical of the speaker. Include these elements in an "avoid_list" on how, based on general knowledge about the speaker and discrepancies observed in the style of the transcripts, certain words, phrases, or behaviors should be avoided to maintain stylistic authenticity. Compare against public records and interviews to validate these choices.
     3. Compose additional step-by-step instructions for the future GPT agent on how to integrate all extracted features to maintain the authenticity of the speaker’s style, and detail them under a supplemental section labeled "instructions". Ensure it directs the GPT agent to weigh its response styles heavily towards the details provided in the “Style Template” creates in 2.
@@ -73,6 +73,6 @@ def gen_style_template(name, transcript_path="placeholder", use_existing=True):
     return json_output
 
 if __name__ == '__main__':
-    name = "Michael Pollan"
-    template_string = gen_style_template(name, use_existing=False)
+    name = "Bill Nye"
+    template_string = gen_style_template(name, transcript_path=f"masterclassConversational/app/billnye_transcript.txt", use_existing=False)
     print(template_string)

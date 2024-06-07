@@ -12,6 +12,11 @@ import pinecone
 import json
 from dotenv import load_dotenv, find_dotenv
 
+"""
+***RAG Chain for retrieving relevant content from a query***
+Goals: To accurately retrieve relevant content to inform the response.
+Status: IMPLEMENTED - V1.0
+"""
 
 # get API Keys
 load_dotenv(find_dotenv())
@@ -54,7 +59,7 @@ def create_query_chain(styleguide_selection, vectorstore):
 
     # Init the PineconeVectorStore for the index
     #vectorstore = PineconeVectorStore(index_name=index_name, embedding=query_embedding, namespace="testing")
-    retriever = vectorstore.as_retriever(k = 10)
+    retriever = vectorstore.as_retriever(search_kwargs={"k": 10})
 
     llm = ChatOpenAI(model="gpt-4o")
 

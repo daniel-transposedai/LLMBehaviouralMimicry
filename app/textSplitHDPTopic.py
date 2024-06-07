@@ -137,12 +137,50 @@ def upsertToVectorDB(embeddings, speaker_name):
     )
 
 
+def check_for_index(speaker_name):
+    namespace = "masterclass"
+    pc = Pinecone(api_key=os.getenv("PINECONE_API_KEY"), namespace=namespace)
+    concatenated_name = speaker_name.replace(" ", "").lower()  # Inputs: Michael Pollan Outputs: michaelpollan
+    index_name = f"{concatenated_name}"
+
+
+    # Does it exist?
+    if index_name not in pc.list_indexes().names():
+        return False
+    else:
+        return True
+
+def transcript_to_upsert(speaker_name, file_path=None, use_existing=True):
+    shortened_name = speaker_name.replace(" ", "").lower()
+
+    if check_for_index(speaker_name) and use_existing:
+        #exists already, pull down the index and continue
+        print("Nothing to do, move on!")
+    else:
+        #create one:
+
+        # Preprocess the text
+        texts, original_sentences = preprocessText(file_path)
+
+        # HDP AND TOPIC MODELLING
+        segmented_texts = applyHDPTopicModelSegmentation(texts)
+
+        # Get embeddings for each text segment
+        embeddings = getEmbeddings(segmented_texts)
+
+        # Upsert to Pinecone
+        upsertToVectorDB(embeddings, speaker_name)
+        print("Done!")
+
+    return True
 
 if __name__ == '__main__':
     # TESTING
     # Preprocess the text
-    file_path = '../michaelpollan_transcript.txt'
-    speaker_name= 'michaelpollan'
+    print(os.listdir(os.getcwd()))
+    # now list contents of app directory
+    file_path = 'masterclassConversational/app/billnye_transcript.txt'
+    speaker_name= 'billnye'
     texts, original_sentences = preprocessText(file_path)
 
 

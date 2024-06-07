@@ -66,8 +66,12 @@ def main():
         with st.form(key="my_form"):
             genre = st.radio(
                 "Who do you want to talk to!",
-                ["***Kevin Hart***", "***Michael Pollan***"],
-                captions=["Engage with Comedy icon Kevin Hart as he teaches you how to use humor as a tool for success. If you can find laughter everywhere, you can be confident anywhere.", "Meet Michael Pollan, a leading voice in the world of food advocacy and sustainable living. Renowned for his insightful books like 'The Omnivore’s Dilemma,' Pollan challenges us to rethink our relationship with food, advocating for choices that are healthier for both our bodies and the planet. Explore his compelling journey and transformative ideas through engaging conversation on health"])
+                ["***Kevin Hart***", "***Bill Nye***", "***Michael Pollan***"],
+                captions=[
+                    "Engage with Comedy icon Kevin Hart as he teaches you how to use humor as a tool for success. If you can find laughter everywhere, you can be confident anywhere",
+                    "Emmy Award–winning science educator Bill Nye teaches you his methods for solving everyday problems, evaluating information, and thinking like a scientist",
+                    "Acclaimed author Michael Pollan teaches you what he's spent decades researching: how to eat more ethically, healthfully, and sustainably"
+                    ])
 
             # Every form must have a submit button.
             submitted = st.form_submit_button("Start/Reset my chat!", on_click=reset_conversation)
