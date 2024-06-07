@@ -2,7 +2,7 @@ import sys
 sys.path.append('../../')
 import streamlit as st
 
-from masterclassConversational.app.relevantContentQuery import get_vectorstore, create_query_chain, format_vectorcontext
+from relevantContentQuery import get_vectorstore, create_query_chain, format_vectorcontext
 
 from langchain_core.messages import AIMessage, HumanMessage
 from dotenv import load_dotenv, find_dotenv
