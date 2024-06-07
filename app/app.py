@@ -55,10 +55,11 @@ def main():
         st.header(":red[About]", divider='rainbow')
         st.markdown(
             """
-            This application PoC interfaces with Masterclass's instructional content using
+            This application PoC interfaces with Masterclass's instructional content using a
             [LangChain](https://python.langchain.com/docs/get_started/introduction)
-            agent designed to help you learn from your favourite celebrities! Created 
-            for Masterclass by Daniel Campbell.
+            powered agent designed to help you learn from your favourite celebrities! 
+            
+            Created for Masterclass by Daniel Campbell.
             """
         )
 
