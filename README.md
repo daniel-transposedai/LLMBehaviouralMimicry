@@ -80,7 +80,7 @@ Used Scripts:
 
 <img src="https://user-images.githubusercontent.com/46083287/209074776-f4bf44c2-7bf1-43ee-b4e8-16a7022603da.png" width="80%"></img>
 
-**Figure 1:** Planned Big 5/OCEAN, multi-model SNS architecture - gathered from this paper [here](https://journalofbigdata.springeropen.com/articles/10.1186/s40537-021-00459-1) 
+**Figure 1:** Planned Big 5/OCEAN, multi-model SNS architecture - guided from research [here](https://journalofbigdata.springeropen.com/articles/10.1186/s40537-021-00459-1) 
 
 ## TODO - Improvements Roadmap
 **Conversation Style**
